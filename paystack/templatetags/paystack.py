@@ -11,6 +11,7 @@ register = template.Library()
 @register.inclusion_tag('paystack_button.html', takes_context=True)
 def paystack_button(context, button_id="django-paystack-button", currency="ngn", plan="", button_class="", amount=None, ref=None, email=None, redirect_url=None, icon="", words="Pay Now"):
     new_ref = ref
+    print(ref, new_ref)
     new_redirect_url = redirect_url
     new_amount = int(amount) * 100
     if not new_ref:
