@@ -40,7 +40,7 @@ class FailedView(RedirectView):
 def success_redirect_view(request, order_id):
     url = settings.PAYSTACK_SUCCESS_URL
     if url == 'paystack:success_page':
-        url = reverse(url)
+        url = reverse(url, args=[order_id])
     return redirect(url, permanent=True)
 
 def failure_redirect_view(request, order_id):

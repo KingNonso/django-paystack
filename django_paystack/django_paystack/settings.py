@@ -25,7 +25,7 @@ SECRET_KEY = '4=!bvm+%#ae^nr0u&wp(gd^aatu&-%vx_thcz0#w)8q(9mfca5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -120,8 +120,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-PAYSTACK_PUBLIC_KEY = os.environ['PAYSTACK_PUBLIC_KEY']
-PAYSTACK_SECRET_KEY = os.environ['PAYSTACK_SECRET_KEY']
+
+PAYSTACK_PUBLIC_KEY = 'pk_test_01e1375be3a112802ce8b96271cfa1deb5008876'
+PAYSTACK_SECRET_KEY = 'sk_test_70407d924d8841e74880d2bbe384f39d4824c526'
 # PAYSTACK_FAILED_URL = "/google/api"
 # PAYSTACK_SUCCESS_URL = "/google/api"
-PAYSTACK_WEBHOOK_DOMAIN = 'tuteria.ngrok.io'
+# PAYSTACK_WEBHOOK_DOMAIN = 'tuteria.ngrok.io'
