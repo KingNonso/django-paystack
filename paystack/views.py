@@ -41,6 +41,8 @@ def success_redirect_view(request, order_id):
     url = settings.PAYSTACK_SUCCESS_URL
     if url == 'paystack:success_page':
         url = "{}?ref={}".format(reverse(url), order_id)
+    else:
+        url = "{}?ref={}".format(reverse(url), order_id)
     return redirect(url, permanent=True)
 
 def failure_redirect_view(request, order_id):
