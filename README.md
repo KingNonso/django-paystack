@@ -11,7 +11,7 @@ Usage:
 
 1. Install `django-paystack`
 ```
-pip install -e git+https://github.com/gbozee/django-paystack.git@master#egg=paystack
+pip install -e git+https://github.com/kingnonso/django-paystack.git@master#egg=paystack
 ```
 
 2. Add `paystack` to your `settings` module
@@ -39,13 +39,13 @@ urlpatterns = [
    path("paystack", include(('paystack.urls','paystack'),namespace='paystack')),
 ]
 ```
-4. Login to [Paystack settings Dashboard](https://dashboard.paystack.com/#/settings/developer) and fetch your `PUBLIC_KEY` and `SECRET_KEY`. paste these keys in your `settings.py`
+4. Login to [Paystack settings Dashboard](https://dashboard.paystack.com/#/settings/developer) and fetch your `PUBLIC_KEY` and `SECRET_KEY`. paste these keys in your `settingsgbozee.py`
 
 ```
 # settings.py
 
-PAYSTACK_PUBLIC_KEY=******,
-PAYSTACK_SECRET_KEY=******
+PAYSTACK_PUBLIC_KEY='******',
+PAYSTACK_SECRET_KEY='******'
 ```
 
 ![alt text](./docs/key.png)
@@ -62,7 +62,7 @@ PAYSTACK_SECRET_KEY=******
 6. A `signal` is provided with the verified  reference as well as the amount
 
 ```
-from hubspot.signals import payment_verified
+from paystack.signals import payment_verified
 
 from django.dispatch import receiver
 
@@ -96,7 +96,7 @@ _Optional_
 
 the template tag `paystack_button` takes the following argument
 
-`button_style`: css class to style the button
+`button_class`: css class to style the button
 
 `button_id`: id name for the button: default is "django-paystack-button"
 
@@ -113,7 +113,7 @@ the template tag `paystack_button` takes the following argument
 
 **To view the sample test project, do the following**
 ```
-$ git clone https://github.com/gbozee/django-paystack.git
+$ git clone https://github.com/kingnonso/django-paystack.git
 $ git checkout develop
 $ pip install -r requirements.txt
 $ pip install -e .
@@ -181,5 +181,5 @@ for example, assuming you are using ngrok during development, in your `settings.
 PAYSTACK_WEBHOOK_DOMAIN=13232323.ngrok.io
 ```
 
-and your webhook url that you would paste at paystack dashboard would be 
+and your webhook url that you would paste at paystack dashboard would be
 http://13232323.ngrok.io/paystack/webhook/
