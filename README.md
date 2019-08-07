@@ -1,8 +1,6 @@
 ## Django Paystack
 
-[![Build Status](https://travis-ci.org/gbozee/django-paystack.svg?branch=master
-)](https://travis-ci.org/gbozee/django-paystack.svg?branch=master
-)
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
 
 This is a reusable django library that makes it very easy to hook up [Paystack]() purchase button to your site/app. It helps with the verification of the transaction and is highly conifgurable.
