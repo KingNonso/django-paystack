@@ -1,0 +1,38 @@
+<form>
+  <script src="{{js_url}}"></script>
+  <button class="{{button_class}}" id="{{button_id}}" type="button" onclick="payWithPaystack()"> Pay </button>
+</form>
+
+<script>
+
+function payWithPaystack() {
+  const paystack = new PaystackPop();
+  const key = "{{key}}"
+  const email = "{{email}}"
+  const amount = {{amount}}
+  const currency = "{{currency|default:'NGN'}}"
+  const plan = "{{plan|default:''}}"
+  const ref = "{{ref}}"
+
+  paystack.newTransaction({
+      key: key,
+      email: email,
+      amount: amount,
+      currency: currency.toUpperCase(),
+      plan: plan,
+      ref: ref,
+      onSuccess: (transaction) => { 
+        // Payment complete! Reference: transaction.reference
+        window.location.href = "{{redirect_url}}&trxref=" + transaction.reference
+ 
+      },
+      onCancel: () => {
+        // user closed popup
+        alert('You would have to reinitiate this transaction. Thanks.')
+      }
+
+      
+  });
+
+}
+</script>
