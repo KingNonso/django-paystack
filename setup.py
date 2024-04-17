@@ -42,14 +42,14 @@ if sys.argv[-1] == 'tag':
     sys.exit()
 
 readme = open('README.md').read()
-history = open('HISTORY.rst').read().replace('.. :changelog:', '')
+# history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 # requirements = open('requirements.txt').readlines()
 
 setup(
     name='django_paystack',
     version=version,
     description="""Django Paystack Payments package""",
-    long_description=readme + '\n\n' + history,
+    long_description=readme + '\n\n',
     long_description_content_type='text/markdown',
     author='Chinonso Ani',
     author_email='achinonso@gmail.com',
